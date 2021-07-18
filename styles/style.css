@@ -8,7 +8,7 @@
     box-sizing: border-box;
     font-family: Helvetica, sans-serif, Arial;
 }
-/* VARIABLES & DEFAULTS */
+/* VARIABLES & GLOBAL */
 html{
     --grey-dark: #707070;
     --grey-medium: #888888;
@@ -22,7 +22,6 @@ body, button, input, textarea{
 }
 h2{
     font-size: 2rem;
-    font-weight: 200;
 }
 p{
     font-size: 1.2rem;
@@ -51,6 +50,28 @@ p{
     font-size: 1.4rem;
     width: 16rem;
     height: 4rem;
+}
+.btn.md{
+    width: 26rem;
+    margin: auto;
+}
+section.container{
+    margin-bottom: 8rem;
+}
+.separator hr{
+    height: .1rem;
+    background: var(--grey-dark);
+}
+.separator h2{
+    background: var(--white);
+    padding: 0 1.6rem;
+}
+.separator div{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 1rem;
 }
 
 /* HEADER */
@@ -95,12 +116,6 @@ main .container.header{
 }
 
 /* FIRST SECTION & FORM*/
-.description{
-    margin-bottom: 3rem; 
- }
- .description h2{
-     margin-bottom: 1.6rem;
- }
 form .btn{
     width: 100%;
 }
@@ -130,3 +145,21 @@ form .checkcontainer label{
 label{
     font-size: 1.2rem;
 }
+
+/* SUBSCRIBE SECTION */
+.description{
+    margin-bottom: 3rem; 
+ }
+.description h2{
+    margin-bottom: 1.6rem;
+    font-weight: 200;
+}
+
+/* FOOTER */
+footer{
+    background: var(--grey-dark);
+    text-align: center;
+    color: var(--white);
+    padding: 3.6rem;
+}
+
