@@ -1,0 +1,165 @@
+
+/* RESET */
+*{
+    margin:0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif, Arial;
+}
+/* VARIABLES & GLOBAL */
+html{
+    --grey-dark: #707070;
+    --grey-medium: #888888;
+    --grey-light: rgba(0,0,0,0.16);
+    --white: #FFFFFF;
+    font-size: 62.5%;
+    color: var(--grey-dark);
+}
+body, button, input, textarea{
+    font-size: clamp(14px, 1.6rem, 2vw);
+}
+h2{
+    font-size: 2rem;
+}
+p{
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+.container{
+    padding: 0 1.6rem 0 1.6rem;
+    width: min(100% 150rem);
+}
+
+.btns{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.btn, button{
+    line-height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--grey-medium);
+    background: white;
+    border-radius: .4rem;
+    border:.1rem solid var(--grey-dark);
+    font-size: 1.4rem;
+    width: 16rem;
+    height: 4rem;
+}
+.btn.md{
+    width: 26rem;
+    margin: auto;
+}
+section.container{
+    margin-bottom: 8rem;
+}
+.separator hr{
+    height: .1rem;
+    background: var(--grey-dark);
+}
+.separator h2{
+    background: var(--white);
+    padding: 0 1.6rem;
+}
+.separator div{ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    bottom: 1rem;
+}
+
+/* HEADER */
+main{
+    width: 100vw;
+    height: 28rem;
+    background: var(--grey-dark);
+    color: var(--white);
+    transform-origin: bottom left;
+    margin-bottom: 16rem;
+}
+main::after{
+    content:'';
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 28rem;
+    border-width: 24vh 100vw;
+    border-style: solid;
+    border-color: var(--grey-dark) var(--grey-dark) rgba(0,0,0,0) rgba(0,0,0,0);
+    z-index: -1;
+}
+main h1{
+    font-weight: lighter;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+main h1 strong{
+    font-size:4rem;
+}
+
+main p{
+    font-size: 1.4rem;
+}
+main .btn{
+    margin: 0 1rem 2rem 1rem; 
+    box-shadow: 0px 1px 6px var(--grey-light);
+}
+main .container.header{
+    padding: 6.6rem 1.6rem;
+}
+
+/* FIRST SECTION & FORM*/
+form .btn{
+    width: 100%;
+}
+input{
+    border:.1rem solid var(--grey-dark);
+}
+input.box {
+    height: 3rem;
+    width: 100%;
+    margin: .8rem 0 2rem 0;
+}
+form .checkcontainer{
+    margin-right: .8rem;
+    display: flex;
+    align-content: center;
+    margin-bottom: 2rem;
+}
+form .checkcontainer input{
+    height: 1.4rem;
+    border:.1rem solid var(--grey-dark);
+    margin-right: .4rem;
+}
+form .checkcontainer label{
+    cursor: pointer;
+    margin-right: 4rem;
+}
+label{
+    font-size: 1.2rem;
+}
+
+/* SUBSCRIBE SECTION */
+.description{
+    margin-bottom: 3rem; 
+ }
+.description h2{
+    margin-bottom: 1.6rem;
+    font-weight: 200;
+}
+
+/* FOOTER */
+footer{
+    background: var(--grey-dark);
+    text-align: center;
+    color: var(--white);
+    padding: 3.6rem;
+}
+
