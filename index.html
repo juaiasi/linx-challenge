@@ -13,10 +13,10 @@
             <p>Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!</p>
         </div>
         <div class="container btns">
-            <a href="#" class="btn">Conheça a Linx</a>
-            <a href="#" class="btn">Ajude o algoritmo</a>
-            <a href="#" class="btn">Seus produtos</a>
-            <a href="#" class="btn">Compartilhe</a>
+            <a href="https://www.linx.com.br/" target="_blank" class="btn">Conheça a Linx</a>
+            <a href="#subscribe" class="btn">Ajude o algoritmo</a>
+            <a href="#offers" class="btn">Seus produtos</a>
+            <a href="#share" class="btn">Compartilhe</a>
         </div>
     </main>
     <section class="container" id="subscribe">
@@ -30,11 +30,11 @@
                 <label for="f-name">Seu nome</label>
                 <input class="box" type="text" id="f-name">
                 <label for="f-email">E-mail</label>
-                <input class="box" type="text" id="f-email">
+                <input class="box" type="email" id="f-email">
                 <label for="f-cpf">CPF</label>
-                <input class="box" type="text" id="f-cpf">
+                <input class="box" type="number" id="f-cpf">
                 <div class="checkcontainer">
-                    <input type="radio" name="radio" id="f-man" checked="checked"><label for="f-man">Masculino</label>
+                    <input type="radio" name="radio" id="f-man"><label for="f-man">Masculino</label>
                     <input type="radio" name="radio" id="f-woman"><label for="f-woman">Feminino</label>
                 </div>
                 <button class="btn">Enviar</button>
@@ -58,10 +58,16 @@
         </div>
         <p>Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</p>
         <form action="">
-            <label for="f-friend-name">Nome do seu amigo</label>
-            <input class="box" type="text" id="f-friend-name">
-            <label for="f-friend-email">E-mail dele</label>
-            <input class="box" type="text" id="f-friend-email">
+            <div class="inputs">
+                <div class="input">
+                    <label for="f-friend-name">Nome do seu amigo</label>
+                    <input class="box" type="text" id="f-friend-name">
+                </div>
+                <div class="input">
+                    <label for="f-friend-email">E-mail dele</label>
+                    <input class="box" type="email" id="f-friend-email">
+                </div>
+            </div>
             <button class="btn md">Enviar agora</button>
         </form>
     </section>
