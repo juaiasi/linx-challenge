@@ -16,6 +16,7 @@ html{
     --white: #FFFFFF;
     font-size: 62.5%;
     color: var(--grey-dark);
+    scroll-behavior: smooth;
 }
 body, button, input, textarea{
     font-size: clamp(14px, 1.6rem, 2vw);
@@ -30,6 +31,9 @@ p{
 .container{
     padding: 0 1.6rem 0 1.6rem;
     width: min(100% 150rem);
+}
+.container.btns{
+    padding: 0;
 }
 
 .btns{
@@ -48,8 +52,13 @@ p{
     border-radius: .4rem;
     border:.1rem solid var(--grey-dark);
     font-size: 1.4rem;
-    width: 16rem;
+    width: min(100%,16rem);
     height: 4rem;
+    transition: 0.2s;
+}
+.btn:hover, button:hover{
+    background: var(--grey-medium);
+    color: var(--white);
 }
 .btn.md{
     width: min(100%, 26rem);
@@ -60,7 +69,7 @@ p{
     width: 100%;
 }
 section.container{
-    margin-bottom: 8rem;
+    padding-top: 8rem;
 }
 .separator{
     margin-bottom: 2.4rem;
@@ -81,12 +90,15 @@ section.container{
     bottom: 1rem;
 }
 
-/*FORM*/
+/*FORMs*/
 form .btn{
     width: 100%;
 }
 input{
     border:.1rem solid var(--grey-dark);
+    font-size: 1.2rem;
+    color: var(--grey-dark);
+    padding: 1rem;
 }
 input.box {
     height: 3rem;
@@ -112,20 +124,21 @@ label{
     font-size: 1.2rem;
 }
 
-/* HEADER */
+/********************* HEADER **************************/
 main{
     height: 28rem;
     background: var(--grey-dark);
     color: var(--white);
     transform-origin: bottom left;
-    margin-bottom: 14rem;
+    margin-bottom: 6rem;
 }
 main::after{
     content:'';
     position: absolute;
     height: 12rem;
-    width: 100%;
+    width: 100vw;
     top: 28rem;
+    left: 0;
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
     background: var(--grey-dark);
@@ -152,7 +165,7 @@ main .container.header{
     padding: 6.6rem 1.6rem;
 }
 
-/* DESCRIPTION (SUBSCRIBE SECTION) */
+/******************* DESCRIPTION (SUBSCRIBE SECTION) **********************/
 .description{
     margin-bottom: 3rem; 
  }
@@ -174,14 +187,14 @@ main .container.header{
     justify-content: space-between;
 }
 
-/* SHARE */
+/********************** SHARE *************************/
 #share p{
     font-size: 1.4rem;
     text-align: center;
     margin-bottom: 3rem;
 }
 
-/* PRODUCTS */
+/********************* PRODUCTS ***********************/
 .card{
     width: 100%;
     display: flex;
@@ -219,8 +232,11 @@ main .container.header{
     height: 100%;
     width: auto;
 }
+.card .product-description{
+    display: none;
+}
 
-/* FOOTER */
+/*********************** FOOTER ****************************/
 footer{
     background: var(--grey-dark);
     text-align: center;
@@ -228,5 +244,76 @@ footer{
     padding: 5.6rem 0 3.6rem 0;
     clip-path: polygon(0% 25%, 100% 0%, 100% 100%, 0% 100%);
     -webkit-clip-path: polygon(0% 25%, 100% 0%, 100% 100%, 0% 100%);
+    margin-top: 8rem;
 }
 
+@media only screen and (max-width:400px) {
+    .btns .btn{
+        width: 40%;
+    }
+    main h1 strong{
+        font-size:3.6rem;
+    }
+}
+
+@media only screen and (min-width:720px){
+    /* HEADER */
+    main{
+        text-align: center;
+    }
+    
+    /* DESCRIPTION (SUBSCRIBE SECTION) */
+    .container{
+        max-width: 92rem;
+        margin: auto;
+    }
+    #subscribe{
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        grid-gap: 6rem;
+    }
+    .icon-arrow{
+        display: none;
+    }
+
+    /* PRODUCTS */
+    #products{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 4rem;
+        justify-content: space-between;
+        margin-bottom: 6rem;
+    }
+    .card{
+        width: 14rem;
+        display: block;
+        margin-bottom: 0;
+    }
+    .card .img-container{
+        width: 100%;
+        height: 15rem;
+        margin-bottom: 1.4rem;
+    }
+    .card .text-container p.product-description{
+        display: block;
+        margin-bottom: 1.2rem;
+    }
+    /* SHARE */
+    #share .inputs{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+    }
+    #share .input{
+        width: min(100%, 36rem);
+        margin: 0 2rem;
+    }
+
+}
+
+@media only screen and (min-width:850px){
+    .card{
+        width: 100%;
+    }
+}

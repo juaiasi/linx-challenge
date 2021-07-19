@@ -16,6 +16,7 @@ fetch(apiUrl, {method: 'GET'})
             </div>
             <div class="text-container">
                 <h4>${product.name}</h4>
+                <p class="product-description">${product.description}</p>
                 <p>De: R$${product.oldPrice}</p>
                 <p><strong>Por: R$${product.price}</strong></p>
                 <p>ou 2x de R$${product.price/2}</p>
