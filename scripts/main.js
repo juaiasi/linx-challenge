@@ -1,3 +1,5 @@
+//Using API
+
 const apiUrl = 'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1'
 const productsList = document.querySelector('#products')
 console.log(productsList)
@@ -25,3 +27,20 @@ fetch(apiUrl, {method: 'GET'})
         </div>`))
 })
 
+//Change display for text on mobile screen
+
+var hidden = false;
+
+function changeDisplay() {
+    var des = document.getElementById("d-text");
+    var icon = document.getElementById("icon-arrow");
+    if (hidden == false) {
+        des.classList.add("hidden");
+        icon.classList.add("rotated");
+        hidden = true;
+    } else {
+        des.classList.remove("hidden");
+        icon.classList.remove("rotated");
+        hidden = false;
+    }
+  }
