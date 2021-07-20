@@ -146,7 +146,7 @@ main::after{
     z-index: -1;
 }
 main h1{
-    font-weight: lighter;
+    font-weight: 400;
     font-size: 2rem;
     margin-bottom: 1rem;
 }
@@ -172,7 +172,7 @@ main .container.header{
  }
 .description h2{
     margin-bottom: 1.6rem;
-    font-weight: 200;
+    font-weight: 400;
 }
 .description .icon-arrow{
     width: 1.8rem;
@@ -194,6 +194,10 @@ main .container.header{
     font-size: 1.4rem;
     text-align: center;
     margin-bottom: 3rem;
+}
+
+#share .inputs{
+    margin-bottom: 2.2rem;
 }
 
 /********************* PRODUCTS ***********************/
