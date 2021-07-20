@@ -1,30 +1,64 @@
 //Using API
-
-const apiUrl = 'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1'
+var apiUrl = 'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1'
 const productsList = document.querySelector('#products')
 
-fetch(apiUrl, {method: 'GET'})
-.then(function(data){
-    return data.json() //promise
-})
-.then(function(data){
-    // console.log(data.products[0].name) //teste
-    data.products.forEach(product =>
-        productsList.innerHTML += 
-        (`<div id="product${product.id}" class="card">
-            <div class="img-container">
-                <img src="${product.image}" alt="${product.name}"/>
-            </div>
-            <div class="text-container">
-                <h4>${product.name}</h4>
-                <p class="product-description">${product.description}</p>
-                <p>De: R$${product.oldPrice}</p>
-                <p><strong>Por: R$${product.price}</strong></p>
-                <p>ou 2x de R$${product.price/2}</p>
-                <a href="#" class="btn sm">Comprar</a>
-            </div>
-        </div>`))
-})
+//Load the first 8 products
+async function loadProducts(){
+    fetch(apiUrl, {method: 'GET'})
+    .then(function(data){
+        return data.json() //promise
+    })
+    .then(function(data){
+        // console.log(data.products[0].name) //teste
+        data.products.forEach(product =>
+            productsList.innerHTML += 
+            (`<div id="product${product.id}" class="card">
+                <div class="img-container">
+                    <img src="${product.image}" alt="${product.name}"/>
+                </div>
+                <div class="text-container">
+                    <h4>${product.name}</h4>
+                    <p class="product-description">${product.description}</p>
+                    <p>De: R$${(product.oldPrice).toString().replace('.',',')}</p>
+                    <p><strong>Por: R$${(product.price).toString().replace('.',',')}</strong></p>
+                    <p>ou 2x de R$${(product.price/2).toString().replace('.',',')}</p>
+                    <a href="#" class="btn sm">Comprar</a>
+                </div>
+            </div>`))
+        apiUrl = 'https://'+data.nextPage;
+    })
+}
+
+loadProducts();
+
+//Load more products
+async function moreProducts(){
+    await loadProducts();
+    fetch(apiUrl, {method: 'GET'})
+    .then(function(data){
+        return data.json() //promise
+    })
+    .then(function(data){
+        data.products.forEach(product =>
+            productsList.innerHTML += 
+            (`<div id="product${product.id}" class="card">
+                <div class="img-container">
+                    <img src="${product.image}" alt="${product.name}"/>
+                </div>
+                <div class="text-container">
+                    <h4>${product.name}</h4>
+                    <p class="product-description">${product.description}</p>
+                    <p>De: R$${(product.oldPrice).toString().replace('.',',')}</p>
+                    <p><strong>Por: R$${(product.price).toString().replace('.',',')}</strong></p>
+                    <p>ou 2x de R$${(product.price/2).toString().replace('.',',')}</p>
+                    <a href="#" class="btn sm">Comprar</a>
+                </div>
+            </div>`))
+    })
+    .catch(err => {
+        alert("Mais produtos em breve!");
+    })
+}
 
 //Change display for text on mobile screen
 
