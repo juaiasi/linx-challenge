@@ -27,18 +27,18 @@
             </div>
         </div>
         <aside>
-            <form action="">
+            <form id="basic-form" action="">
                 <label for="f-name">Seu nome</label>
                 <input class="box" type="text" id="f-name">
                 <label for="f-email">E-mail</label>
                 <input class="box" type="email" id="f-email">
-                <label for="f-cpf">CPF</label>
+                <label for="f-cpf" maxlength="4">CPF</label>
                 <input class="box" type="number" id="f-cpf">
                 <div class="checkcontainer">
                     <input type="radio" name="radio" id="f-man"><label for="f-man">Masculino</label>
                     <input type="radio" name="radio" id="f-woman"><label for="f-woman">Feminino</label>
                 </div>
-                <button class="btn">Enviar</button>
+                <button onclick="validateForm()" class="btn">Enviar</button>
             </form>
         </aside>
     </section>
@@ -57,7 +57,7 @@
             <div><h2>Compartilhe a novidade</h2></div>
         </div>
         <p>Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</p>
-        <form action="">
+        <form id="share-form" action="">
             <div class="inputs">
                 <div class="input">
                     <label for="f-friend-name">Nome do seu amigo</label>
@@ -68,7 +68,7 @@
                     <input class="box" type="email" id="f-friend-email">
                 </div>
             </div>
-            <button class="btn md">Enviar agora</button>
+            <button onclick="validateShare()" class="btn md">Enviar agora</button>
         </form>
     </section>
     <footer>

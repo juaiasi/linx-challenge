@@ -326,6 +326,9 @@ footer{
 }
 
 @media only screen and (min-width:850px){
+    main .btn{
+        margin: 0 2rem 2rem 2rem;
+    }
     .card{
         width: 100%;
     }
