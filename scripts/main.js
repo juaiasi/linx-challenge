@@ -14,7 +14,7 @@ async function loadProducts(){
             productsList.innerHTML += 
             (`<div id="product${product.id}" class="card">
                 <div class="img-container">
-                    <img src="${product.image}" alt="${product.name}"/>
+                    <img src="https:${product.image}" alt="${product.name}"/>
                 </div>
                 <div class="text-container">
                     <h4>${product.name}</h4>
@@ -43,7 +43,7 @@ async function moreProducts(){
             productsList.innerHTML += 
             (`<div id="product${product.id}" class="card">
                 <div class="img-container">
-                    <img src="${product.image}" alt="${product.name}"/>
+                    <img src="https:${product.image}" alt="${product.name}"/>
                 </div>
                 <div class="text-container">
                     <h4>${product.name}</h4>
