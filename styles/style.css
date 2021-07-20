@@ -17,6 +17,7 @@ html{
     font-size: 62.5%;
     color: var(--grey-dark);
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 body, button, input, textarea{
     font-size: clamp(14px, 1.6rem, 2vw);
@@ -181,6 +182,7 @@ main .container.header{
     clip-path: polygon(0% 0%, 10% 0, 50% 80%, 90% 0, 100% 0, 50% 100%);
     position: relative;
     top: .8rem;
+    transition: 0.2s;
 }
 .description .d-title{
     display: flex;
@@ -253,6 +255,17 @@ footer{
     }
     main h1 strong{
         font-size:3.6rem;
+    }
+    
+}
+
+@media only screen and (max-width:720px) {
+    /* JAVASCRIPT */
+    .hidden{
+        display: none;
+    }
+    .rotated{
+        transform: rotate(180deg);
     }
 }
 
