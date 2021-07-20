@@ -2,7 +2,6 @@
 
 const apiUrl = 'https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1'
 const productsList = document.querySelector('#products')
-console.log(productsList)
 
 fetch(apiUrl, {method: 'GET'})
 .then(function(data){
@@ -43,4 +42,81 @@ function changeDisplay() {
         icon.classList.remove("rotated");
         hidden = false;
     }
-  }
+}
+
+// Validating basic-form
+
+function validateForm() {
+    var fName = document.getElementById("f-name");
+    var fEmail = document.getElementById("f-email");
+    var fCpf = document.getElementById("f-cpf");
+    var fMan = document.getElementById("f-man");
+    var fWoman = document.getElementById("f-woman");
+
+    if(fName.value == ""){
+        alert("Nome não informado");
+        fName.focus();
+        return;
+    }
+    if(fEmail.value == ""){
+        alert("Email não informado");
+        fName.focus();
+        return;
+    }
+    if(fEmail.value.includes('@') == false){
+        alert("Isso não é um email válido");
+        fName.focus();
+        return;
+    }
+    if(fCpf.value == ""){
+        alert("CPF não informado");
+        fName.focus();
+        return;
+    }
+    if(fCpf.value.length < 11){
+        alert("CPF inválido");
+        fName.focus();
+        return;
+    }
+    if(fCpf.value == ""){
+        alert("CPF não informado");
+        fName.focus();
+        return;
+    }
+    if(fMan.checked == false && fWoman.checked == false){
+        alert("Sexo não informado");
+        fName.focus();
+        return;
+    }
+    else{
+        alert("Obrigado! Em breve entraremos em contato :D");
+    //window.location.href = "email.html";
+    }
+}
+
+//Validating share-form
+
+function validateShare() {
+    var fFriendName = document.getElementById("f-friend-name");
+    var fFriendEmail = document.getElementById("f-friend-email");
+
+    if(fFriendName.value == ""){
+        alert("Nome não informado");
+        fName.focus();
+        return;
+    }
+    if(fFriendEmail.value == ""){
+        alert("Email não informado");
+        fName.focus();
+        return;
+    }
+    if(fFriendEmail.value.includes('@') == false){
+        alert("Isso não é um email válido");
+        fName.focus();
+        return;
+    }
+    else{
+        alert("Obrigado! Em breve entraremos em contato com seu amigo :D");
+    //window.location.href = "email.html";
+    }
+}
